@@ -1,0 +1,13 @@
+[package]
+name = "sgx-dcap-ql-sys"
+version = "0.1.0"
+edition = "2018"
+links = "sgx_dcap_ql"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+bindings = []
+
+[dependencies]
+sgx_types = { git = "https://github.com/apache/incubator-teaclave-sgx-sdk", rev = "d107bd0718f723221750a4f2973451b386cbf9d2", features = [ "extra_traits" ] }

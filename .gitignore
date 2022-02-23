@@ -1,2 +1,3 @@
 /target
 Cargo.lock
+/sgx-dcap-ql-sys/target
