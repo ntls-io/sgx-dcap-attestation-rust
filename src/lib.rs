@@ -38,7 +38,7 @@ pub unsafe fn get_quote(
 
     match qe_result {
         sgx_quote3_error_t::SGX_QL_SUCCESS => Ok(quote_vec.into_boxed_slice()),
-        _ => todo!(),
+        _ => Err(qe_result),
     }
 }
 
@@ -151,5 +151,24 @@ mod test {
 
         assert!(result.is_ok());
         assert_eq!(result.unwrap(), expected_quote.into_boxed_slice());
+    }
+
+    #[test]
+    fn get_quote_error() {
+        let _m = get_lock(&MTX);
+        let quote_size = 5u32;
+        let report = sgx_report_t::default();
+        let err = sgx_quote3_error_t::SGX_QL_ERROR_OUT_OF_MEMORY;
+
+        let ctx = SgxDcapQlSys::sgx_qe_get_quote_context();
+
+        ctx.expect().once().returning(
+            move |report: *const sgx_report_t, quote_size: u32, quote_ptr: *mut u8| err.clone(),
+        );
+
+        let result = unsafe { get_quote(report, quote_size) };
+
+        assert!(result.is_err());
+        assert_eq!(result.unwrap_err(), err);
     }
 }
