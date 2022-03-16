@@ -65,6 +65,13 @@ fn main() {
             &mut report,
         )
     };
+    println!("Enclave Report: {:?}", report);
+
+    let quote_size = unsafe { dcap_attestation::get_quote_size() }.unwrap();
+    println!("Quote Size: {:?}", quote_size);
+
+    let quote = unsafe { dcap_attestation::get_quote(report, quote_size) }.unwrap();
+    println!("Quote: {:?}", quote);
 
     println!("{:?}", report);
 

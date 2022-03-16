@@ -6,7 +6,7 @@ enclave {
     trusted
     {
         public sgx_status_t ecall_test([in, size=len] const uint8_t* some_string, size_t len);
-        public sgx_status_t enclave_create_report([in] const sgx_target_info_t* p_qe3_target, [in] sgx_report_t* p_report);
+        public sgx_status_t enclave_create_report([in] const sgx_target_info_t* p_qe3_target, [out] sgx_report_t* p_report);
     };
     untrusted
     {
