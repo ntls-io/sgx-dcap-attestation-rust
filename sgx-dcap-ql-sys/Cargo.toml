@@ -11,5 +11,5 @@ bindings = []
 mock = ["mockall"]
 
 [dependencies]
-sgx_types = { git = "https://github.com/apache/incubator-teaclave-sgx-sdk", rev = "d107bd0718f723221750a4f2973451b386cbf9d2", features = [ "extra_traits" ] }
+sgx_types = { git = "https://github.com/apache/incubator-teaclave-sgx-sdk", rev = "e8a9fc22939befa27ff67f5509b2c2dfe8499945", features = [ "extra_traits" ] }
 mockall = { version = "0.11.0", optional = true}
