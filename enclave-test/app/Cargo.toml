@@ -1,0 +1,14 @@
+[package]
+# name matches APP_U in Makefile
+name = "template-app"
+version = "0.1.0"
+edition = "2018"
+authors = ["Teaclave"]
+build = "build.rs"
+
+[dependencies]
+sgx_types = { git = "https://github.com/apache/incubator-teaclave-sgx-sdk", rev = "d107bd0718f723221750a4f2973451b386cbf9d2", features = [ "extra_traits" ] }
+sgx_urts = { git = "https://github.com/apache/incubator-teaclave-sgx-sdk", rev = "d107bd0718f723221750a4f2973451b386cbf9d2" }
+dcap_attestation = { path = "../../" }
+
+[patch.'https://github.com/apache/teaclave-sgx-sdk.git']
