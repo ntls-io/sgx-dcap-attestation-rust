@@ -1,10 +1,13 @@
 #[cfg(feature = "bindings")]
 mod bindings;
+#[cfg(feature = "mock")]
+use mockall::automock;
 use sgx_types::{
     c_char, sgx_ql_path_type_t, sgx_ql_request_policy_t, sgx_quote3_error_t, sgx_report_t,
     sgx_target_info_t, uint32_t, uint8_t,
 };
 
+#[cfg_attr(feature = "mock", automock)]
 pub trait SgxDcapQl {
     unsafe fn sgx_qe_set_enclave_load_policy(policy: sgx_ql_request_policy_t)
         -> sgx_quote3_error_t;

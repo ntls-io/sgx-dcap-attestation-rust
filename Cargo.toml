@@ -5,9 +5,16 @@ edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[features]
+default = ["bindings"]
+test = ["sgx-dcap-ql-sys/mock"]
+bindings = ["sgx-dcap-ql-sys/bindings"]
+
 [dependencies]
 sgx_types = { git = "https://github.com/apache/incubator-teaclave-sgx-sdk", rev = "d107bd0718f723221750a4f2973451b386cbf9d2", features = [ "extra_traits" ] }
 libloading = "0.7.2"
+sgx-dcap-ql-sys = { path = "sgx-dcap-ql-sys" }
 
 [dev-dependencies]
 mockall = { version = "0.10.2", features = ["nightly"] }
+once_cell = "1.10.0"
