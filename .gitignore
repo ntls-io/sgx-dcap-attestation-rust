@@ -1,3 +1,4 @@
 /target
-Cargo.lock
+/Cargo.lock
 /sgx-dcap-ql-sys/target
+/sgx-dcap-ql-sys/Cargo.lock
