@@ -3,7 +3,7 @@ use sgx_types::{
     sgx_target_info_t, uint32_t, uint8_t,
 };
 
-// FROM: https://github.com/apache/incubator-teaclave-sgx-sdk/blob/d107bd0718f723221750a4f2973451b386cbf9d2/sgx_types/src/function.rs#L710
+// FROM: https://github.com/apache/incubator-teaclave-sgx-sdk/blob/19355dc16d347331eb9949aec83ffe7103d9da94/sgx_types/src/function.rs#L718-L730
 extern "C" {
     //
     // sgx_dcap_ql_wrapper.h
