@@ -9,6 +9,6 @@ build = "build.rs"
 [dependencies]
 sgx_types = { git = "https://github.com/apache/incubator-teaclave-sgx-sdk", rev = "e8a9fc22939befa27ff67f5509b2c2dfe8499945", features = [ "extra_traits" ] }
 sgx_urts = { git = "https://github.com/apache/incubator-teaclave-sgx-sdk", rev = "e8a9fc22939befa27ff67f5509b2c2dfe8499945" }
-dcap_attestation = { path = "../../" }
+dcap_attestation = { path = "../.." }
 
 [patch.'https://github.com/apache/teaclave-sgx-sdk.git']
